@@ -13,7 +13,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ConsumeApiProvider } from '../providers/consume-api/consume-api';
 
+//Para api
 import{ HttpClientModule } from '@angular/common/http';
+
+import { LoginPage } from '../pages/login/login';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import{ HttpClientModule } from '@angular/common/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -31,6 +37,7 @@ import{ HttpClientModule } from '@angular/common/http';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    LoginPage,
     MyApp,
     AboutPage,
     ContactPage,

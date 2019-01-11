@@ -12,19 +12,22 @@ import { Observable } from 'rxjs/Observable';
 export class HomePage {
   //data: string[];
   teste: Observable<any>;
+  public resultado:any;
   constructor(public navCtrl: NavController, private ConsumeAPI: ConsumeApiProvider, public http: HttpClient) {
     this.teste = this.http.get('http://192.168.1.2:8080/demo/all');
     this.teste.subscribe(data => {
+      this.resultado = data
       console.log('my data: ', data);
+      
     })  
 
   }
 
   ionViewDidLoad(){
-    this.ListaHome();
   }
 
-  ListaHome(){
+  ListaHome(test){
+    this.navCtrl.push('salas', {test : test});
   //  this.ConsumeAPI.lista().subscribe(data => this.data = data);
   }
 }
