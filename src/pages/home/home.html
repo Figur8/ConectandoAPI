@@ -5,7 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngFor="let test of resultado">
-      {{test.nome}}
-    </ion-list>
+  <ion-list  inset>
+    <button ion-item *ngFor="let test of resultado">
+      <h1>{{test.sala}}</h1>
+    </button>
+  </ion-list>
 </ion-content>

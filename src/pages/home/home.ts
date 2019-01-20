@@ -14,7 +14,7 @@ export class HomePage {
   teste: Observable<any>;
   public resultado:any;
   constructor(public navCtrl: NavController, private ConsumeAPI: ConsumeApiProvider, public http: HttpClient) {
-    this.teste = this.http.get('http://192.168.1.2:8080/demo/all');
+    this.teste = this.http.get('http://192.168.1.2:8080/demo/sala');
     this.teste.subscribe(data => {
       this.resultado = data
       console.log('my data: ', data);
