@@ -19,15 +19,35 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
   pushPage: any;
+  params: Object;
+  iden: String;
+  teste: String;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.pushPage = TabsPage;
+    this.params =  {id:  this.teste};
+    this.navCtrl.push(HomePage, {
+        data: this.teste,
+    });
   }
   
+  testando(teste){
+    this.teste = teste;
+    this.params =  {id:  this.teste};
+    this.pushPage = HomePage;
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  autenticar(){
+  public autenticar(teste): void {
     //inserir lógica aqui dentro
-    
+    let gambi = teste;
+    console.log(gambi);
+    if(gambi){  
+      this.navCtrl.push(HomePage, {'singlePost': gambi});
+  }
+   // this.params =  {data:  teste,};
+    //this.teste = teste;
+    //this.pushPage = HomePage;
+    //console.log(this.params);
   }
 }

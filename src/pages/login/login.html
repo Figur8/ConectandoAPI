@@ -16,10 +16,11 @@
 <ion-content padding>
   <ion-title >testando</ion-title>
   <ion-item>
-    <ion-input type="text" placeholder="id" ></ion-input>
+    {{iden}}
+    <ion-input type="text"  placeholder="id" #iden></ion-input>
   </ion-item>
   <ion-item>
     <ion-input type="Password" placeholder="Senha" ></ion-input>
   </ion-item>
-  <button ion-button [navPush]="pushPage"></button>
+  <button ion-button (click)="autenticar(iden.value)"  [navPush]="pushPage"></button>
 </ion-content>
